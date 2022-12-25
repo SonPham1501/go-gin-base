@@ -1,7 +1,6 @@
-package server
+package routers
 
 import (
-	"com.son.server.goginbase/controllers"
 	"com.son.server.goginbase/middlewares"
 	"github.com/gin-gonic/gin"
 )
@@ -14,11 +13,7 @@ func NewRouter() *gin.Engine {
 
 	v1 := router.Group("v1")
 	{
-		userGroup := v1.Group("user")
-		{
-			user := controllers.UserController{}
-			userGroup.GET("/:id", user.Retrieve)
-		}
+		userRouter(v1)
 	}
 
 	return router

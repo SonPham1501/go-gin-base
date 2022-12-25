@@ -1,9 +1,12 @@
 package server
 
-import "com.son.server.goginbase/configs"
+import (
+	"com.son.server.goginbase/configs"
+	"com.son.server.goginbase/routers"
+)
 
-func Init()  {
+func Init() {
 	config := configs.GetConfig()
-	r := NewRouter()
+	r := routers.NewRouter()
 	r.Run(":" + config.GetString("server.port"))
 }
