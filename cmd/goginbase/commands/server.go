@@ -37,6 +37,8 @@ func runServer(interruptChan chan os.Signal) error {
 	debug.SetTraceback("cash")
 
 	environment := flag.String("e", "development", "")
+	// environment := flag.String("e", "production", "")
+	// environment := flag.String("e", "test", "")
 	flag.Usage = func() {
 		fmt.Println("Usage: server -e {mode}")
 		os.Exit(1)
