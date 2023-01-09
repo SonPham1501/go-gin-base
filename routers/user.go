@@ -5,10 +5,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func userRouter(g *gin.RouterGroup)  {
+func userRouter(g *gin.RouterGroup, userController *controllers.UserController)  {
 	userGroup := g.Group("user")
 	{
-		userController := controllers.UserController {}
 		userGroup.GET("/:id", userController.Retrieve)
 	}
 }
